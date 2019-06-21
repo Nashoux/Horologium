@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{bbc6573b-8431-4e76-b0db-86bfc43a3026}">
+        <property name="assetPath">
+            <value>Engrenages qui tournent.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>2.7740816326530613</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{d011dc1b-f70b-4a1a-91be-b08c069317f0}</destination>
+        </relationship>
+    </object>
+</objects>

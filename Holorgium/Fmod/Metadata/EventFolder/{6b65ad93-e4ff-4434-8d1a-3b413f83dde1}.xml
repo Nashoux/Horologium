@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="EventFolder" id="{6b65ad93-e4ff-4434-8d1a-3b413f83dde1}">
+        <property name="name">
+            <value>Mouvement horloge</value>
+        </property>
+        <relationship name="folder">
+            <destination>{1c008317-22da-46d9-a234-50a6aa069149}</destination>
+        </relationship>
+    </object>
+</objects>
