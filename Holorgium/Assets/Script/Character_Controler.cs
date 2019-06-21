@@ -8,6 +8,7 @@ public class Character_Controler : MonoBehaviour
     public float speed = 1f;
     private CharacterController controller;
     private Vector3 movementDirection = Vector3.zero;
+    
 
     private void Start()
     {
