@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{2d6128f8-49db-4663-81db-b881968c921b}">
+        <property name="assetPath">
+            <value>metal-iron-clang-sound-effects-for-games.mp3</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>192.31200000000001</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{d011dc1b-f70b-4a1a-91be-b08c069317f0}</destination>
+        </relationship>
+    </object>
+</objects>
