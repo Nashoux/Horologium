@@ -26,7 +26,8 @@ public class MoveCamera : MonoBehaviour
     }
 
     IEnumerator CoCamMouv( float yRotation, float zRotation, float z){
-        float yR =0;
+        float yR = (yRotation - transform.localRotation.y) /120;
+
         for(int i = 120; i<0 ; i--){
             
         }
