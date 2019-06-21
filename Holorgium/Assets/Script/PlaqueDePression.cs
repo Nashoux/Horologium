@@ -7,10 +7,14 @@ public class PlaqueDePression : MonoBehaviour
 
     public float RotationY;
     public float RotationZ;
-    public float PositionZ;
+    public float PositionY;
 
 
     private void OnTriggerEnter(Collider other) {
-        MoveCamera.inPlaque.Invoke(RotationY,RotationZ,PositionZ);
+        if (other.tag == "Player" && !MoveCamera.CamMouving)
+        {
+            Debug.Log("1");
+            MoveCamera.inPlaque.Invoke(RotationY, RotationZ, PositionY);
+        }
     }
 }

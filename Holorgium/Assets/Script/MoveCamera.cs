@@ -21,23 +21,37 @@ public class MoveCamera : MonoBehaviour
 		inPlaque -= MouvCam;
 	}
 
-    void MouvCam ( float yRotation, float zRotation, float z){
-        
+    void MouvCam ( float yRotation, float zRotation, float yPos){
+        Debug.Log("2");
+        StartCoroutine(CoCamMouv(yRotation, zRotation, yPos));
     }
 
-    IEnumerator CoCamMouv( float yRotation, float zRotation, float z){
-        float yR = (yRotation - transform.localRotation.y) /120;
-
-        for(int i = 120; i<0 ; i--){
-            
+    IEnumerator CoCamMouv( float yRotation, float zRotation, float yPos)
+    {
+        if(transform.eulerAngles.y%360 >= yRotation-5 && transform.eulerAngles.y % 360 <= yRotation+5)
+        {
+            CamMouving = false;
+            yield return null;
         }
+
+
+        CamMouving = true;
+        float yR = (yRotation - transform.eulerAngles.y) /120;
+
+        for(int i = 120; i>0 ; i--){
+            Debug.Log("3");
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + yR, transform.eulerAngles.z);
+            yield return new WaitForEndOfFrame();
+          
+        }
+
+
+        CamMouving = false;
+        Debug.Log("4");
+
         yield return null;
     }
 
 
 
-    void Update()
-    {
-        
-    }
 }
