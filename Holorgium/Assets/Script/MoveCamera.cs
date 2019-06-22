@@ -20,7 +20,9 @@ public class MoveCamera : MonoBehaviour{
 	}
 
     void MouvCam ( float yRotation, float zRotation, float yPos){
-        StartCoroutine(CoCamMouv(yRotation, zRotation, yPos));
+        if (yRotation != transform.localEulerAngles.y){
+            StartCoroutine(CoCamMouv(yRotation, zRotation, yPos));
+        }
     }
 
     IEnumerator CoCamMouv( float yRotation, float zRotation, float yPos)
@@ -40,7 +42,7 @@ public class MoveCamera : MonoBehaviour{
             yield return new WaitForEndOfFrame();          
         }
 
-
+         transform.eulerAngles = new Vector3(transform.eulerAngles.x, yRotation, transform.eulerAngles.z);
         CamMouving = false;
 
         yield return null;
