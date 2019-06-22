@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class GearsScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+
+
+    public void Autodestruction(){
+        StartCoroutine(DestructionAfterATime());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    IEnumerator DestructionAfterATime(){
+
+        Vector3 toChange = transform.localScale / 60;
+
+        for (int i = 60; i>0; i--){
+            transform.localScale -= toChange;
+            yield return new WaitForEndOfFrame();
+        }
+        transform.position = new Vector3(0,-10,0);
+        yield return null;
     }
+   
 }
