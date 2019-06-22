@@ -35,6 +35,8 @@ public class SelectMecanism : MonoBehaviour{
         if( inventoryGear != null && isPlacing && Physics.Raycast(ray,out hitInfo, Mathf.Infinity, maskPlace ) && hitInfo.collider.tag == "Wall") {
             inventoryGear.transform.localScale = size;
             inventoryGear.transform.position = hitInfo.point;
+            inventoryGear.transform.localEulerAngles = new Vector3(inventoryGear.transform.localEulerAngles.x,hitInfo.transform.localEulerAngles.z+180,inventoryGear.transform.localEulerAngles.z);
+
             if(Input.GetMouseButtonDown(0)){
                 inventoryGear = null;
                 isPlacing = false;
