@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 103974025}
   - component: {fileID: 103974024}
   - component: {fileID: 103974027}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Engrenage (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -955,7 +955,7 @@ GameObject:
   - component: {fileID: 655746689}
   - component: {fileID: 655746688}
   - component: {fileID: 655746691}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Engrenage (4)
   m_TagString: Gears
   m_Icon: {fileID: 0}
@@ -1139,6 +1139,50 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 828351711}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &832193941
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 832193943}
+  - component: {fileID: 832193942}
+  m_Layer: 0
+  m_Name: MANAGER
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &832193942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832193941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f56398007f54d5f45878615c982d0d4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryGear: {fileID: 0}
+--- !u!4 &832193943
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832193941}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &878039539
 GameObject:
   m_ObjectHideFlags: 0
@@ -1527,7 +1571,7 @@ GameObject:
   - component: {fileID: 1193432170}
   - component: {fileID: 1193432169}
   - component: {fileID: 1193432172}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Engrenage (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1994,7 +2038,7 @@ GameObject:
   - component: {fileID: 1556541101}
   - component: {fileID: 1556541100}
   - component: {fileID: 1556541104}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Engrenage
   m_TagString: Gears
   m_Icon: {fileID: 0}
@@ -2099,7 +2143,7 @@ GameObject:
   - component: {fileID: 1666443937}
   - component: {fileID: 1666443936}
   - component: {fileID: 1666443939}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Engrenage (5)
   m_TagString: Gears
   m_Icon: {fileID: 0}
@@ -2204,7 +2248,7 @@ GameObject:
   - component: {fileID: 1671279702}
   - component: {fileID: 1671279701}
   - component: {fileID: 1671279704}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Engrenage (1)
   m_TagString: Gears
   m_Icon: {fileID: 0}
@@ -2401,7 +2445,7 @@ GameObject:
   - component: {fileID: 1890961335}
   - component: {fileID: 1890961334}
   - component: {fileID: 1890961337}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Engrenage (3)
   m_TagString: Gears
   m_Icon: {fileID: 0}
@@ -2506,7 +2550,7 @@ GameObject:
   - component: {fileID: 1966640292}
   - component: {fileID: 1966640291}
   - component: {fileID: 1966640294}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Engrenage (7)
   m_TagString: Gears
   m_Icon: {fileID: 0}
