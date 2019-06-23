@@ -12,6 +12,34 @@ public class GearsScript : MonoBehaviour
     public static Action<Mecanism> MecanismWorking;
 
     public static Action<Mecanism> MecanismStop;
+    public bool turning =false;
+
+    Animator an;
+
+    void MecanismWork(Mecanism myMec){
+        if(myMec == mecanism){
+            turning = true;
+            an.SetBool("Turn", turning);
+        }
+
+    }
+    void MecanismStoping(Mecanism myMec){
+        if(myMec == mecanism){
+            turning = false;
+            an.SetBool("Turn", turning);
+        }
+    }
+
+    private void Start() {
+        MecanismWorking += MecanismWork;
+        MecanismStop += MecanismStoping;
+        an = GetComponent<Animator>();
+    }
+
+    private void OnDestroy() {
+         MecanismWorking -= MecanismWork;
+        MecanismStop -= MecanismStoping;
+    }
 
 
     public void Autodestruction(){
