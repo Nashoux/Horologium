@@ -41,8 +41,8 @@ public class SelectMecanism : MonoBehaviour{
                 inventoryGear = null;
                 isPlacing = false;
             }
-        }else if (inventoryGear != null )
-        {
+        }
+        else if (inventoryGear != null ){
             inventoryGear.transform.localScale = Vector3.zero;
             inventoryGear.transform.position = new Vector3(0,-10,0);
         }

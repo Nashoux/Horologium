@@ -1,9 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+
 
 public class GearsScript : MonoBehaviour
 {
+
+    [SerializeField] Mecanism mecanism;
+
+    public static Action<Mecanism> MecanismWorking;
+
+    public static Action<Mecanism> MecanismStop;
 
 
     public void Autodestruction(){
