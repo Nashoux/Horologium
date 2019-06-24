@@ -14,26 +14,45 @@ public class GearsScript : MonoBehaviour
     public static Action<Mecanism> MecanismStop;
     public bool turning =false;
 
-    Animator an;
+    public List<GearsScript> GearsNextToThis = new List<GearsScript>();
+    public Animator an;
+
+    GearsScript ActiveParent;
 
     void MecanismWork(Mecanism myMec){
         if(myMec == mecanism){
             turning = true;
             an.SetBool("Turn", turning);
+            ActiveNextGearsF(turning,this);
         }
 
+    }
+
+    public void ActiveNextGearsF( bool _turning, GearsScript parentGear){
+        turning = _turning;
+        an.SetBool("Turn", turning);
+        if(turning == true){
+            ActiveParent = parentGear;
+        }
+        for(int i = 0; i <GearsNextToThis.Count; i++){
+            if(GearsNextToThis[i].turning != turning && GearsNextToThis[i] != ActiveParent ){
+                GearsNextToThis[i].ActiveNextGearsF(turning, this);
+                GearsNextToThis[i].an.SetFloat("Multiplier", - an.GetFloat("Multiplier"));
+            }
+        }
     }
     void MecanismStoping(Mecanism myMec){
         if(myMec == mecanism){
             turning = false;
             an.SetBool("Turn", turning);
+            ActiveNextGearsF(turning, this);
         }
     }
 
     private void Start() {
         MecanismWorking += MecanismWork;
         MecanismStop += MecanismStoping;
-        an = GetComponent<Animator>();
+        //an = GetComponent<Animator>();
     }
 
     private void OnDestroy() {
@@ -46,6 +65,8 @@ public class GearsScript : MonoBehaviour
         StartCoroutine(DestructionAfterATime());
     }
 
+  
+
     IEnumerator DestructionAfterATime(){
 
         Vector3 toChange = transform.localScale / 60;
@@ -56,6 +77,23 @@ public class GearsScript : MonoBehaviour
         }
         transform.position = new Vector3(0,-10,0);
         yield return null;
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        if(other.tag == "Gears" && !GearsNextToThis.Contains(other.GetComponent<GearsScript>()) ){
+            GearsNextToThis.Add(other.GetComponent<GearsScript>());
+            if(turning){
+                other.GetComponent<GearsScript>().ActiveNextGearsF(turning, this);
+            }
+        }
+    }
+    private void OnTriggerExit(Collider other) {
+        if(other.tag == "Gears" && GearsNextToThis.Contains(other.GetComponent<GearsScript>()) ){
+           GearsNextToThis.RemoveAt( GearsNextToThis.IndexOf(other.GetComponent<GearsScript>()) );
+            if(turning){
+                other.GetComponent<GearsScript>().ActiveNextGearsF(false, this);
+            }
+        }
     }
    
 }

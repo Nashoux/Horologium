@@ -29,13 +29,15 @@ public class SelectMecanism : MonoBehaviour{
             if(Input.GetMouseButtonDown(1) && hitInfo.collider.GetComponent<GearsScript>() ){
                 inventoryGear = hitInfo.collider.gameObject;
                 size = hitInfo.collider.transform.localScale;
-                hitInfo.collider.GetComponent<GearsScript>().Autodestruction();
+                inventoryGear.GetComponent<GearsScript>().Autodestruction();
+
             }
         }
         if( inventoryGear != null && isPlacing && Physics.Raycast(ray,out hitInfo, Mathf.Infinity, maskPlace ) && hitInfo.collider.tag == "Wall") {
             inventoryGear.transform.localScale = size;
             inventoryGear.transform.position = hitInfo.point;
-            inventoryGear.transform.localEulerAngles = new Vector3(inventoryGear.transform.localEulerAngles.x,hitInfo.transform.localEulerAngles.z+180,inventoryGear.transform.localEulerAngles.z);
+            Debug.Log(hitInfo.transform.eulerAngles.z);
+            inventoryGear.transform.localEulerAngles = new Vector3(inventoryGear.transform.localEulerAngles.x,hitInfo.transform.localEulerAngles.z-90f,inventoryGear.transform.localEulerAngles.z);
 
             if(Input.GetMouseButtonDown(0)){
                 inventoryGear = null;
