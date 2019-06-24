@@ -12,11 +12,8 @@ public class Mecanism : MonoBehaviour{
 
     Animator an;
 
-    public GearsScript previousGear;
-    public GearsScript[] nextGears;
 
-    void Start()
-    {
+    void Start(){
         an = GetComponent<Animator>();
         an.SetBool("Turn", false);
     }
@@ -26,13 +23,15 @@ public class Mecanism : MonoBehaviour{
 
         if(Input.GetKey(KeyCode.A) && Vector3.Distance(transform.position, player.position) < 1.5f ){
             an.SetBool("Turn", true);
+            an.SetFloat("Multiplier", 1f);
             timerTurn+=Time.deltaTime*2;
             if(turning){
                 GearsScript.MecanismStop.Invoke(this);
                 turning = false;
             }
         }else{
-            an.SetBool("Turn", false);
+            an.SetBool("Turn", true);
+            an.SetFloat("Multiplier", -0.5f);
             if(timerTurn > 0 ){
                 timerTurn-=Time.deltaTime;
                 if(!turning){
@@ -40,6 +39,7 @@ public class Mecanism : MonoBehaviour{
                     turning = true;
                 }
             }else{
+                an.SetBool("Turn", false);
                 timerTurn = 0;
                 if(turning){
                     GearsScript.MecanismStop.Invoke(this);
