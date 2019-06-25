@@ -12,21 +12,23 @@ public class Character_Controler : MonoBehaviour
     bool CamJustMoved = false;
 
     float multiplier =1;
+
+    Rigidbody rb;
     
 
-    private void Start()
-    {
+    private void Start(){
         controller = GetComponent<CharacterController>();
+        rb = GetComponent<Rigidbody>();
     }
 
-    void Update()
-    {
+    void Update(){
+
         HandleInput();
         controller.SimpleMove(movementDirection * speed);
     }
 
-    void HandleInput()
-    {
+    void HandleInput(){
+
         float h = Input.GetAxis("Horizontal")*multiplier;
         float v = Input.GetAxis("Vertical")*multiplier;
 

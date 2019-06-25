@@ -30,7 +30,6 @@ public class SelectMecanism : MonoBehaviour{
                 inventoryGear = hitInfo.collider.gameObject;
                 size = hitInfo.collider.transform.localScale;
                 inventoryGear.GetComponent<GearsScript>().Autodestruction();
-
             }
         }
         if( inventoryGear != null && isPlacing && Physics.Raycast(ray,out hitInfo, Mathf.Infinity, maskPlace ) && hitInfo.collider.tag == "Wall") {
