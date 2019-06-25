@@ -14,6 +14,9 @@ public class Character_Controler : MonoBehaviour
     float multiplier =1;
 
     Rigidbody rb;
+
+    [SerializeField] Animator an;
+
     
 
     private void Start(){
@@ -24,7 +27,8 @@ public class Character_Controler : MonoBehaviour
     void Update(){
 
         HandleInput();
-        controller.SimpleMove(movementDirection * speed);
+
+        
     }
 
     void HandleInput(){
@@ -44,8 +48,23 @@ public class Character_Controler : MonoBehaviour
             CamJustMoved = false;
         }
 
-        movementDirection = new Vector3(h, 0f, v);
+        if(h == 0 && v == 0){
+            an.SetBool("Walking", false);
+        }else
+        {
+            movementDirection = new Vector3(h, 0f, v);
+            an.SetBool("Walking", true);
+        }
+
+        if(Input.GetKeyDown(KeyCode.Space)){
+            an.SetTrigger("Jump");
+        }
+
+        
         movementDirection.Normalize();
         transform.rotation = Quaternion.LookRotation(movementDirection);
+
+        rb.velocity = new Vector3(h, 0f, v).normalized*2;
+
     }
 }
