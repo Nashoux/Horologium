@@ -71,10 +71,12 @@ public class GearsScript : MonoBehaviour
 
         Vector3 toChange = transform.localScale / 60;
 
-        for (int i = 60; i>0; i--){
+        /*for (int i = 60; i>0; i--){
             transform.localScale -= toChange;
             yield return new WaitForEndOfFrame();
-        }
+        }*/
+
+        transform.localScale = new Vector3(0,0,0);
         transform.position = new Vector3(0,-10,0);
         yield return null;
     }

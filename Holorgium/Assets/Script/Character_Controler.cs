@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(CharacterController))]
 public class Character_Controler : MonoBehaviour
 {
-    public float speed = 1f;
+    public float speed = 35f;
+    public float speedJump = 5f;
     private CharacterController controller;
     private Vector3 movementDirection = Vector3.zero;
 
@@ -13,7 +13,7 @@ public class Character_Controler : MonoBehaviour
 
     float multiplier =1;
 
-    Rigidbody rb;
+    public Rigidbody rb;
 
     [SerializeField] Animator an;
 
@@ -27,6 +27,13 @@ public class Character_Controler : MonoBehaviour
     void Update(){
 
         HandleInput();
+        /*/if(rb.velocity.y >0){
+            rb.velocity -= new Vector3(0,0.5f,0);
+        }else
+        {
+            rb.velocity = new Vector3(rb.velocity.x,0f,rb.velocity.z);
+        }
+        */
 
         
     }
@@ -58,13 +65,19 @@ public class Character_Controler : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Space)){
             an.SetTrigger("Jump");
+            StartCoroutine(Jumping());
         }
 
-        
+                
         movementDirection.Normalize();
         transform.rotation = Quaternion.LookRotation(movementDirection);
+        transform.position += new Vector3(h, 0f, v).normalized*speed/1000;
 
-        rb.velocity = new Vector3(h, 0f, v).normalized*2;
+    }
 
+    IEnumerator Jumping(){
+        yield return new WaitForSeconds(01f);
+        rb.velocity = new Vector3(rb.velocity.x,rb.velocity.y +speedJump, rb.velocity.z ) ;
+        yield return null;
     }
 }
