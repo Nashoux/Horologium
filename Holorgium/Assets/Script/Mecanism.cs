@@ -18,7 +18,6 @@ public class Mecanism : MonoBehaviour{
         an.SetBool("Turn", false);
     }
 
-    // Update is called once per frame
     void Update(){
 
         if(Input.GetKey(KeyCode.A) && Vector3.Distance(transform.position, player.position) < 1.5f ){
