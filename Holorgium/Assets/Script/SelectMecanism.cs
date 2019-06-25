@@ -37,7 +37,7 @@ public class SelectMecanism : MonoBehaviour{
             inventoryGear.transform.localScale = size;
             inventoryGear.transform.position = hitInfo.point;
             Debug.Log(hitInfo.transform.eulerAngles.z);
-            inventoryGear.transform.localEulerAngles = new Vector3(inventoryGear.transform.localEulerAngles.x,hitInfo.transform.localEulerAngles.z-90f,inventoryGear.transform.localEulerAngles.z);
+            inventoryGear.transform.localEulerAngles = new Vector3(inventoryGear.transform.localEulerAngles.x,hitInfo.transform.localEulerAngles.z+90f,inventoryGear.transform.localEulerAngles.z);
 
             if(Input.GetMouseButtonDown(0)){
                 inventoryGear = null;
