@@ -55,12 +55,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Material\Shader\Assets\5.Final Shader\OnHoverBorder.cs" />
      <Compile Include="Assets\Script\Character_Controler.cs" />
      <Compile Include="Assets\Script\GearsScript.cs" />
      <Compile Include="Assets\Script\Mecanism.cs" />
      <Compile Include="Assets\Script\MoveCamera.cs" />
      <Compile Include="Assets\Script\PlaqueDePression.cs" />
      <Compile Include="Assets\Script\SelectMecanism.cs" />
+     <None Include="Assets\Material\Shader\Assets\3.Blur\Blur.shader" />
+     <None Include="Assets\Material\Shader\TestOutline.shader" />
+     <None Include="Assets\Material\Shader\Assets\5.Final Shader\OutlineBlur.shader" />
+     <None Include="Assets\Material\Shader\Assets\5.Final Shader\OutlineDistort.shader" />
+     <None Include="Assets\Material\Shader\Assets\2.Outline\Outline.shader" />
+     <None Include="Assets\Material\Shader\Assets\1.ApplyTexture\ApplyTexture.shader" />
+     <None Include="Assets\Material\Shader\Outliner.shader" />
+     <None Include="Assets\Material\Shader\Assets\5.Final Shader\FinalOutline.shader" />
+     <None Include="Assets\Material\Shader\Assets\4.Distort\Distort.shader" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/Document/PierreHorologium/Holorgium/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

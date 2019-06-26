@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1270886421480382890}
   - component: {fileID: 1270886421480382891}
   - component: {fileID: 1270886421480382888}
+  - component: {fileID: 8118642001838692745}
   m_Layer: 10
   m_Name: EngrenagePrefab
   m_TagString: Gears
@@ -92,6 +93,22 @@ MonoBehaviour:
   mecanism: {fileID: 0}
   turning: 0
   GearsNextToThis: []
+  an: {fileID: 0}
+--- !u!114 &8118642001838692745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270886421480382889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa775eb38ffd7e848aa7adb11122bb1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 1270886422936284604}
+  border: {fileID: 2100000, guid: 43634af54cdc096459f4c2042109892b, type: 2}
+  nonBorder: {fileID: 2100000, guid: 0c6c28197c4d05d428095a530c066b31, type: 2}
 --- !u!1 &1270886422936284486
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +171,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 11d47d9adb586c647be87b4a7ce2c95c, type: 2}
+  - {fileID: 2100000, guid: 0c6c28197c4d05d428095a530c066b31, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -201,36 +218,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1270886421480382884}
     m_Modifications:
-    - target: {fileID: 7133031581895719613, guid: ef421f99d900ecb42b4f645080f9d171,
-        type: 3}
-      propertyPath: m_Name
-      value: Engrenages petit trou
-      objectReference: {fileID: 0}
-    - target: {fileID: 7133031581895719613, guid: ef421f99d900ecb42b4f645080f9d171,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 7133031581895719613, guid: ef421f99d900ecb42b4f645080f9d171,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1287030552830288826, guid: ef421f99d900ecb42b4f645080f9d171,
-        type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1287030552830288826, guid: ef421f99d900ecb42b4f645080f9d171,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8845430732619468385, guid: ef421f99d900ecb42b4f645080f9d171,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 7a92d096e8bebb648bd086360a605091, type: 2}
     - target: {fileID: 6099782332051327150, guid: ef421f99d900ecb42b4f645080f9d171,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -295,6 +282,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.47999993
+      objectReference: {fileID: 0}
+    - target: {fileID: 7133031581895719613, guid: ef421f99d900ecb42b4f645080f9d171,
+        type: 3}
+      propertyPath: m_Name
+      value: Engrenages petit trou
+      objectReference: {fileID: 0}
+    - target: {fileID: 7133031581895719613, guid: ef421f99d900ecb42b4f645080f9d171,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 7133031581895719613, guid: ef421f99d900ecb42b4f645080f9d171,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8845430732619468385, guid: ef421f99d900ecb42b4f645080f9d171,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7a92d096e8bebb648bd086360a605091, type: 2}
+    - target: {fileID: 1287030552830288826, guid: ef421f99d900ecb42b4f645080f9d171,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1287030552830288826, guid: ef421f99d900ecb42b4f645080f9d171,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4174415315439891592, guid: ef421f99d900ecb42b4f645080f9d171,
         type: 3}
