@@ -63,7 +63,7 @@ public class Character_Controler : MonoBehaviour
             an.SetBool("Walking", true);
         }
 
-        if(Input.GetKeyDown(KeyCode.Space)){
+        if(Input.GetKeyDown(KeyCode.Space) && rb.velocity.y < 0.5f ){
             an.SetTrigger("Jump");
             StartCoroutine(Jumping());
         }
@@ -76,7 +76,7 @@ public class Character_Controler : MonoBehaviour
     }
 
     IEnumerator Jumping(){
-        yield return new WaitForSeconds(01f);
+        yield return new WaitForSeconds(0.01f);
         rb.velocity = new Vector3(rb.velocity.x,rb.velocity.y +speedJump, rb.velocity.z ) ;
         yield return null;
     }
