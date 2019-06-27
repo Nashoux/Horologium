@@ -7,11 +7,16 @@ public class SelectMecanism : MonoBehaviour{
     [SerializeField] GameObject inventoryGear;
     Vector3 size;
 
+    FMOD.Studio.EventInstance PoseSound;
+    FMOD.Studio.EventInstance TakeSound;
+
     bool isPlacing = false;
 
     LayerMask maskTake;
     LayerMask maskPlace;
     void Start(){
+        PoseSound = FMODUnity.RuntimeManager.CreateInstance ("event:/Joueur/EngrenagePosé");
+        TakeSound = FMODUnity.RuntimeManager.CreateInstance ("event:/Joueur/EngrenagePris");
         maskTake = LayerMask.GetMask("Engrenage");
         maskPlace = LayerMask.GetMask("Wall");
     }
@@ -30,15 +35,21 @@ public class SelectMecanism : MonoBehaviour{
                 inventoryGear = hitInfo.collider.gameObject;
                 size = hitInfo.collider.transform.localScale;
                 inventoryGear.GetComponent<GearsScript>().Autodestruction();
+                TakeSound.start();
             }
         }
         if( inventoryGear != null && isPlacing && Physics.Raycast(ray,out hitInfo, Mathf.Infinity, maskPlace ) && hitInfo.collider.tag == "Wall") {
             inventoryGear.transform.localScale = size;
             inventoryGear.transform.position = hitInfo.point;
             Debug.Log(hitInfo.transform.eulerAngles.z);
-            inventoryGear.transform.localEulerAngles = new Vector3(inventoryGear.transform.localEulerAngles.x,hitInfo.transform.localEulerAngles.z+90f,inventoryGear.transform.localEulerAngles.z);
+            if(hitInfo.transform.name == "WallBugger"){
+                inventoryGear.transform.localEulerAngles = new Vector3(inventoryGear.transform.localEulerAngles.x,hitInfo.transform.localEulerAngles.z+270f,inventoryGear.transform.localEulerAngles.z);
+            }else{
+                inventoryGear.transform.localEulerAngles = new Vector3(inventoryGear.transform.localEulerAngles.x,hitInfo.transform.localEulerAngles.z+90f,inventoryGear.transform.localEulerAngles.z);
+            }
 
             if(Input.GetMouseButtonDown(0)){
+                PoseSound.start();
                 inventoryGear = null;
                 isPlacing = false;
             }

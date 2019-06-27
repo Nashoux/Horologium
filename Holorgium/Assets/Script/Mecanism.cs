@@ -12,10 +12,18 @@ public class Mecanism : MonoBehaviour{
 
     Animator an;
 
+    FMOD.Studio.EventInstance sonneBegin;
+    FMOD.Studio.EventInstance sonneEnd;
+    FMOD.Studio.EventInstance engrenageSound;
+
 
     void Start(){
         an = GetComponent<Animator>();
         an.SetBool("Turn", false);
+
+         sonneBegin = FMODUnity.RuntimeManager.CreateInstance ("event:/MouvementHorloge/ActivationMouvement");
+         sonneEnd = FMODUnity.RuntimeManager.CreateInstance ("event:/MouvementHorloge/DésactivationMouvement");
+         engrenageSound = FMODUnity.RuntimeManager.CreateInstance ("event:/MouvementHorloge/SonDeStateMouvement");
     }
 
     void Update(){
@@ -25,6 +33,9 @@ public class Mecanism : MonoBehaviour{
             an.SetFloat("Multiplier", 1f);
             timerTurn+=Time.deltaTime*2;
             if(turning){
+                sonneBegin.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                sonneEnd.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                engrenageSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 GearsScript.MecanismStop.Invoke(this);
                 turning = false;
             }
@@ -34,6 +45,9 @@ public class Mecanism : MonoBehaviour{
             if(timerTurn > 0 ){
                 timerTurn-=Time.deltaTime;
                 if(!turning){
+                    sonneEnd.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                    sonneBegin.start();
+                    engrenageSound.start();
                     GearsScript.MecanismWorking.Invoke(this);
                     turning = true;
                 }
@@ -41,6 +55,9 @@ public class Mecanism : MonoBehaviour{
                 an.SetBool("Turn", false);
                 timerTurn = 0;
                 if(turning){
+                    sonneBegin.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                    engrenageSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                    sonneEnd.start();
                     GearsScript.MecanismStop.Invoke(this);
                     turning = false;
                 }

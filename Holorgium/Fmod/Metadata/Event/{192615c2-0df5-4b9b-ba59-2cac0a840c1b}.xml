@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.01.10.00">
     <object class="Event" id="{192615c2-0df5-4b9b-ba59-2cac0a840c1b}">
         <property name="name">
-            <value>Engrenage posé</value>
+            <value>EngrenagePosé</value>
         </property>
         <property name="outputFormat">
             <value>1</value>
@@ -90,10 +90,10 @@
     <object class="MixerBusPanner" id="{e143654b-721a-4e45-ba77-6ee5c18f81de}"/>
     <object class="SingleSound" id="{6ed634c0-c0b7-47c6-b4de-dc3e9279a445}">
         <property name="length">
-            <value>1.5000000000000036</value>
+            <value>1.3885000000000041</value>
         </property>
         <property name="timelockedOffset">
-            <value>27.5</value>
+            <value>27.611499999999996</value>
         </property>
         <relationship name="audioFile">
             <destination>{2d6128f8-49db-4663-81db-b881968c921b}</destination>

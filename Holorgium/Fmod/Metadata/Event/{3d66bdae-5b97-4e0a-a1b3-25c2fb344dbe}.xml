@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.01.10.00">
     <object class="Event" id="{3d66bdae-5b97-4e0a-a1b3-25c2fb344dbe}">
         <property name="name">
-            <value>Désactivation mouvement</value>
+            <value>DésactivationMouvement</value>
         </property>
         <property name="outputFormat">
             <value>1</value>
@@ -90,7 +90,13 @@
     <object class="MixerBusPanner" id="{ea1746be-a7b6-4841-805f-cd81fd2e4e43}"/>
     <object class="SingleSound" id="{c5874594-d3da-43a0-8f72-45f34139554a}">
         <property name="length">
-            <value>5.5</value>
+            <value>2.2000000000000002</value>
+        </property>
+        <property name="timelockedOffset">
+            <value>0.10000000000000001</value>
+        </property>
+        <property name="pitch">
+            <value>16</value>
         </property>
         <relationship name="fadeOutCurve">
             <destination>{f84bd81c-0484-4678-bffe-a1d2731ae740}</destination>
@@ -100,6 +106,9 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{ca829194-811b-4f5c-99b4-7f999cf2fdfd}">
+        <property name="volume">
+            <value>-8.5</value>
+        </property>
         <property name="name">
             <value>Audio 1</value>
         </property>
@@ -137,18 +146,18 @@
     <object class="MixerBusFader" id="{2792592f-18aa-4884-a8b4-f55b756739da}"/>
     <object class="AutomationPoint" id="{a17ca598-3ae0-432d-a878-e2a94315fa9f}">
         <property name="position">
-            <value>3.5</value>
+            <value>0.20000000000000018</value>
         </property>
         <property name="value">
             <value>1</value>
         </property>
         <property name="curveShape">
-            <value>0.25471893</value>
+            <value>0.0354068093</value>
         </property>
     </object>
     <object class="AutomationPoint" id="{bd3a688f-01e9-4a9b-a7e8-8c03f63db717}">
         <property name="position">
-            <value>5.5</value>
+            <value>2.2000000000000002</value>
         </property>
         <property name="value">
             <value>0</value>

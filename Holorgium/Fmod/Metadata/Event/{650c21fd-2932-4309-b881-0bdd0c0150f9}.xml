@@ -106,6 +106,9 @@
         <property name="name">
             <value>Audio 1</value>
         </property>
+        <relationship name="automators">
+            <destination>{b7136237-1258-40eb-a778-bad58fa6edda}</destination>
+        </relationship>
         <relationship name="effectChain">
             <destination>{ffa38398-5f9a-4974-9158-ff0b72826b36}</destination>
         </relationship>
@@ -137,6 +140,14 @@
     </object>
     <object class="MixerBusPanner" id="{e0e3246d-390e-4954-bcdc-89df832d0d61}"/>
     <object class="MixerBusFader" id="{5409f8be-a571-472d-aba7-5774b657d829}"/>
+    <object class="Automator" id="{b7136237-1258-40eb-a778-bad58fa6edda}">
+        <property name="nameOfPropertyBeingAutomated">
+            <value>volume</value>
+        </property>
+        <relationship name="automationCurves">
+            <destination>{921f059d-7bef-48d2-a88d-ee5cfe5341a1}</destination>
+        </relationship>
+    </object>
     <object class="MixerBusEffectChain" id="{ffa38398-5f9a-4974-9158-ff0b72826b36}">
         <relationship name="effects">
             <destination>{98e0ac7a-3a53-4730-a6fa-d423a444baa9}</destination>
@@ -145,6 +156,15 @@
     </object>
     <object class="MixerBusPanner" id="{8df1b243-c337-4cc0-8339-add3ef468a29}"/>
     <object class="MixerBusFader" id="{274a8050-9dd4-4ae3-83d5-c23aff858791}"/>
+    <object class="AutomationCurve" id="{921f059d-7bef-48d2-a88d-ee5cfe5341a1}">
+        <relationship name="parameter">
+            <destination>{30057b95-13d3-464a-a2e2-95458e39595b}</destination>
+        </relationship>
+        <relationship name="automationPoints">
+            <destination>{1145ce2a-1ec2-490e-8feb-5935c0279548}</destination>
+            <destination>{c05dd9d3-70a0-44d9-bd3a-ee2bea0ce764}</destination>
+        </relationship>
+    </object>
     <object class="MixerBusFader" id="{98e0ac7a-3a53-4730-a6fa-d423a444baa9}"/>
     <object class="SFXReverbEffect" id="{5e75390c-b6cd-4d27-a9f2-db83a5862b1a}">
         <property name="decayTime">
@@ -164,6 +184,22 @@
         </property>
         <property name="dryLevel">
             <value>-3</value>
+        </property>
+    </object>
+    <object class="AutomationPoint" id="{1145ce2a-1ec2-490e-8feb-5935c0279548}">
+        <property name="position">
+            <value>1</value>
+        </property>
+        <property name="value">
+            <value>-8</value>
+        </property>
+    </object>
+    <object class="AutomationPoint" id="{c05dd9d3-70a0-44d9-bd3a-ee2bea0ce764}">
+        <property name="position">
+            <value>0</value>
+        </property>
+        <property name="value">
+            <value>-80</value>
         </property>
     </object>
 </objects>

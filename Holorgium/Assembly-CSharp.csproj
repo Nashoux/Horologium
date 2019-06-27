@@ -55,7 +55,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\GoogleVR\Scripts\Audio\FmodGvrAudio.cs" />
+     <Compile Include="Assets\GoogleVR\Scripts\Audio\FmodGvrAudioRoom.cs" />
      <Compile Include="Assets\Material\Shader\Assets\5.Final Shader\OnHoverBorder.cs" />
+     <Compile Include="Assets\ResonanceAudio\Scripts\FmodResonanceAudio.cs" />
+     <Compile Include="Assets\ResonanceAudio\Scripts\FmodResonanceAudioRoom.cs" />
      <Compile Include="Assets\Script\Character_Controler.cs" />
      <Compile Include="Assets\Script\GearsScript.cs" />
      <Compile Include="Assets\Script\Mecanism.cs" />
@@ -650,6 +654,12 @@
  <Reference Include="System.Xml.Serialization">
  <HintPath>D:/Program Files/2019.1.7f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{D6010D17-4D03-AAAB-7A6C-25D825DBD03B}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
