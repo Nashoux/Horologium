@@ -65,6 +65,7 @@
      <Compile Include="Assets\Script\Mecanism.cs" />
      <Compile Include="Assets\Script\MoveCamera.cs" />
      <Compile Include="Assets\Script\PlaqueDePression.cs" />
+     <Compile Include="Assets\Script\ResetAndCheat.cs" />
      <Compile Include="Assets\Script\SelectMecanism.cs" />
      <None Include="Assets\Material\Shader\Assets\3.Blur\Blur.shader" />
      <None Include="Assets\Material\Shader\TestOutline.shader" />

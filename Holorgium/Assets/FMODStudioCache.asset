@@ -71,7 +71,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -4273223360698182486}
+  - {fileID: 8102192859113099990}
   MinDistance: 0
   MaxDistance: 0
   Length: 2774
@@ -232,7 +232,7 @@ MonoBehaviour:
   - {fileID: 7536444164406139669}
   StringsBanks:
   - {fileID: 1778031876760085573}
-  stringsBankWriteTime: 636972447798892034
+  stringsBankWriteTime: 636972814999560315
   cacheVersion: 3
 --- !u!114 &737430588573395460
 MonoBehaviour:
@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Name: bank:/Master Bank.strings.bank
   m_EditorClassIdentifier: 
   Path: Fmod\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636972447798892034
+  lastModified: 636972814999560315
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -364,7 +364,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -7775108909422589087}
+  - {fileID: 6010642844559218816}
   MinDistance: 0
   MaxDistance: 0
   Length: 2774
@@ -401,6 +401,23 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Bruit d'engrenage qui bougeAmbiant/Volume
+  m_EditorClassIdentifier: 
+  Name: Volume
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &6010642844559218816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Bruit d'engrenage qui bouge/Volume
   m_EditorClassIdentifier: 
   Name: Volume
   Min: 0
@@ -451,6 +468,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2000
+--- !u!114 &6978110409315984020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SonDeStateMouvement/Volume
+  m_EditorClassIdentifier: 
+  Name: Volume
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &7056722544670293960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -490,13 +524,13 @@ MonoBehaviour:
   guid: d643843c7e750841a8345e70596bb73d
   Banks:
   - {fileID: 7536444164406139669}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 460
+  Length: 410
 --- !u!114 &7184997569603276995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -517,7 +551,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 4501638490137580371}
+  - {fileID: 6978110409315984020}
   MinDistance: 0
   MaxDistance: 0
   Length: 7979
@@ -534,11 +568,11 @@ MonoBehaviour:
   m_Name: bank:/Master Bank.bank
   m_EditorClassIdentifier: 
   Path: D:\Document\PierreHorologium\Holorgium\Fmod\Build\Desktop\Master Bank.bank
-  lastModified: 636972447798822226
+  lastModified: 636972814999510435
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 2449664
+    Value: 2434432
   Exists: 1
 --- !u!114 &8071260480660208395
 MonoBehaviour:
@@ -557,6 +591,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &8102192859113099990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Bruit d'engrenage qui bougeAmbiant/Volume
+  m_EditorClassIdentifier: 
+  Name: Volume
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &8766965686392864196
 MonoBehaviour:
   m_ObjectHideFlags: 0

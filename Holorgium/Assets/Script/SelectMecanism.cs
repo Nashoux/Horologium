@@ -10,6 +10,8 @@ public class SelectMecanism : MonoBehaviour{
     FMOD.Studio.EventInstance PoseSound;
     FMOD.Studio.EventInstance TakeSound;
 
+    [SerializeField] GameObject[] toSpawn;
+
     bool isPlacing = false;
 
     LayerMask maskTake;
@@ -22,6 +24,27 @@ public class SelectMecanism : MonoBehaviour{
     }
 
     void Update(){
+
+        if(Input.GetKeyDown(KeyCode.Alpha0) ){
+            inventoryGear = Instantiate<GameObject>( toSpawn[1] );
+            size = Vector3.one;
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha1)){
+            inventoryGear = Instantiate<GameObject>( toSpawn[2] );
+            size = Vector3.one;
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha2) ){
+            inventoryGear = Instantiate<GameObject>( toSpawn[3] );
+            size = Vector3.one;
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha3)){
+            inventoryGear = Instantiate<GameObject>( toSpawn[4] );
+            size = Vector3.one;
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha4) ){
+            inventoryGear = Instantiate<GameObject>( toSpawn[5] );
+            size = Vector3.one;
+        }
 
         if(Input.GetKeyDown(KeyCode.E) && inventoryGear != null){
             isPlacing = !isPlacing;
